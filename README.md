@@ -21,6 +21,8 @@ This expert system currently recommends teen fiction using the Java based rule e
 * Get rid of compelling as a characteristic.
 * Make it so that if the first question is given a book the system doesn't know, it saves that book into the database.
 
+# easy way to contribute
+* Add a book! Genres can be verified by looking at the Wikipedia page of the book. 
 
 # sources of knowledge
 * Wikipedia for background information on expert systems
