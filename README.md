@@ -10,7 +10,7 @@ My expert system currently recommends teen fiction using the Java based rule eng
 # instructions
 1. Download Jess from https://www.jessrules.com/jess/download.shtml. This should give you a 30 day trial to the software. I am currently working on finding a workaround or different language which doesn't involve downloading a free trial of a software.
 2. Save book_recs.clp in the examples/jess folder.
-3. Run Jess using jess.exe in bin.
+3. Run Jess using jess.exe in bin. Command would be bin/jess.
 4. Run (batch "examples/jess/book_recs.clp") in Jess.
 
 # future improvements
