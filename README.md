@@ -20,6 +20,7 @@ This expert system currently recommends teen and adult fiction using the Java ba
 * Fix the plot-driven vs character-driven question - people find it confusing.
 * Get rid of compelling as a characteristic.
 * Make it so that if the first question is given a book the system doesn't know, it saves that book into the database.
+* Standardize which characteristics go with which appeal factor.
 
 # easy way to contribute
 * Add a book! Genres can be verified by looking at the Wikipedia page of the book. 
