@@ -207,12 +207,14 @@ Deffacts construct is used for clarity.
 	(book (t Good_Omens) (a Neil_Gaiman) (genre humorous satirical) (tone darkly_humorous upbeat) (style witty))
 	(book (t Interworld) (a Neil_Gaiman) (genre fantasy science_fiction) (story plot-driven) (tone sarcastic) (style compelling descriptive))
 	(book (t Nation) (a Terry_Pratchett) (genre adventure fantasy) (story character-driven) (tone funny thought-provoking) (style engaging))
-	(book (t The_Night_Circus) (a Erin_Morgenstern) (genre fantasy) (tone atmospheric romantic) (style lush))
+	(book (t The_Night_Circus) (a Erin_Morgenstern) (genre fantasy) (tone atmospheric romantic) (style detail_rich))
 	(book (t The_Godfather) (a Mario_Puzo) (genre book_to_movie family_saga) (story character-driven) (tone dramatic haunting violent) (style compelling gritty))
 	(book (t Ship_Breaker) (a Paolo_Bacigalupi) (genre science_fiction) (story action-packed world-building) (tone bleak) (style compelling))
 	(book (t The_Casual_Vacancy) (a J.K._Rowling) (genre black_humor satirical) (story character-driven) (tone bleak darkly_humorous))
 	(book (t Nancy_Drew_mysteries) (a Carolyn_Keene) (genre mystery) (story plot-driven) (tone suspenseful))
 	(book (t Hardy_Boys_mysteries) (a Frankline_W._Dixon) (genre mystery) (story plot-driven))
+	(book (t The_House_of_the_Scorpion) (a Nancy_Farmer) (genre science_fiction dystopia) (story world-building) (tone suspenseful))
+	(book (t The_Shadow_Speaker) (a Nnedi_Okorafor-Mbachu) (genre science_fiction fantasy) (story world-building African plot-driven) (tone serious))
 )
 
 
