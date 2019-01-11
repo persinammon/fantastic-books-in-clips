@@ -1,28 +1,42 @@
-# fantastic-books-in-clips
-An expert system to recommend fiction to the casual reader. 
-Tentatively named "Fantastic Books and Where To Find Them" or "Book Guru".
+# Fantastic Books and Where To Find Them
 
-# description
-An expert system is a form of AI software popular in the 1980's - in fact, it was one of the first successful forms of AI. An expert system is supposed to emulate the expertise of a human who has practiced their craft for tens of thousands of hours. It does this by having a set of rules and facts.
+An expert system is one of the first successful forms of AI and was popular in the 80's (yes, pre-Python and Java design patterns, but after the start of great ML and AI academic research). This expert system uses a __rule engine__ written in late 1995 by an engineer at Sandia National Labs. 
 
-This expert system currently recommends teen fiction using the Java based rule engine Jess and the CLIPS programming language. It has rules for asking questions and facts for all possible books that the engine can recommend. Jess doesn't sequentially go through code, but instead executes a rule whenever the left hand side of the rule is satisfied (basically like an if statement). It is unpredictable when a rule will be executed and at the same time possible for a rule to be executed multiple times. This particular system questions the user using the question rules until the recommend rule is fired. The recommend rule is fired when there is only one book left in the library. Whenever a question is answered books are retracted from the library until there is only one book in the library.
+The rule engine itself is based on an implementation of the [Rete algorithm](https://en.wikipedia.org/wiki/Rete_algorithm), which optimizes on a simple looping through conditionals by implementing a trie of left hand side patterns to match, and marking nodes as they are fulfilled (not necessarily in sequential order). When a leaf node is reached, the corresponding rule is fired.
 
-# instructions
-1. Download Jess from https://www.jessrules.com/jess/download.shtml. This should give you a 30 day trial to the software. I am currently working on finding a workaround or different language which doesn't involve downloading a free trial of a software.
-2. Save book_recs.clp in the examples/jess folder.
-3. Run Jess using jess.exe in bin. Command would be bin/jess.
-4. Run (batch "examples/jess/book_recs.clp") in Jess.
+## Dependencies 
 
-# future improvements
-* Add more books to the library, preferably adult fiction and literature.
-* Add length of book as a characteristic. Short, medium, long?
-* Convert code into LISP or another rule engine based coding schema which doesn't have a 30 day trial.
-* Fix the plot-driven vs character-driven question - people find it confusing.
-* Get rid of compelling as a characteristic.
+- Jess rule engine, Java-based, can integrate with JSR94 rule engine API 
+- CLIPS functional programming language
+- Maven build system, install dependency by downloading *jess.jar*, running `mvn install`, referencing under a `<dependency>` tag in `pom.xml`
+
+## Functionality
+
+- Asks series of questions based on characteristics of books in dataset
+- Guaranteed recommendation when one remaining book that fits user written characteristics in dataset
+- Uses a CLI and string-built questions 
+
+## How to Run
+
+This expert system is currently standalone, so this is the process to run the CLI recommendation system. A future improvement is to write a driver to run the code using Java then package into a `.jar` file.
+
+1. Download `jess.exe` from https://www.jessrules.com/jess/download.shtml. (Fun fact: I got to interact with the Jess creator during this process).
+2. Save `book_recs.clp` in the examples/jess folder.
+3. Run `jess.exe` using `bin/jess`.
+4. Run `(batch "examples/jess/book_recs.clp")`.
+
+## Future Improvements
+
+This program is not actively worked on at the moment, but forks and pull requests are certainly welcome. The following example
+extensions are not time consuming to implement.
+
+* Move build to Maven and write Java driver.
+* Add length of book as a characteristic. 
 * Make it so that if the first question is given a book the system doesn't know, it saves that book into the database.
+* Standardize which characteristics go with which appeal factor.
+* Output the reason why the book was chosen along with the recommendation.
 
+## Easy Contributions
 
-# sources of knowledge
-* Wikipedia for background information on expert systems
-* Dr. Nelson for hosting an expert systems class
-* Ms. Cranston & Ms. Vaughan for helping me determine categories of appeal factors in books
+* Add a book! Genres can be verified by looking at the Wikipedia page of the book. 
+* Update the characteristics of a book.
