@@ -214,7 +214,7 @@ Deffacts construct is used for clarity.
 	(book (t Nancy_Drew_mysteries) (a Carolyn_Keene) (genre mystery) (story plot-driven) (tone suspenseful))
 	(book (t Hardy_Boys_mysteries) (a Frankline_W._Dixon) (genre mystery) (story plot-driven))
 	(book (t The_House_of_the_Scorpion) (a Nancy_Farmer) (genre science_fiction dystopia) (story world-building) (tone suspenseful))
-	(book (t The_Shadow_Speaker) (a Nnedi_Okorafor-Mbachu) (genre science_fiction fantasy) (story world-building African plot-driven) (tone serious))
+	(book (t The_Shadow_Speaker) (a Nnedi_Okorafor-Mbachu) (genre science_fiction fantasy adventure bildungsroman historical_drama) (story world-building African plot-driven) (tone serious))
 )
 
 
