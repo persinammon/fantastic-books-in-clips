@@ -21,6 +21,7 @@ This expert system currently recommends teen and adult fiction using the Java ba
 * Get rid of compelling as a characteristic.
 * Make it so that if the first question is given a book the system doesn't know, it saves that book into the database.
 * Standardize which characteristics go with which appeal factor.
+* Make the final decision print out what characteristics made it go to that decision - makes decision more *interpretable*.
 
 # easy way to contribute
 * Add a book! Genres can be verified by looking at the Wikipedia page of the book. 
