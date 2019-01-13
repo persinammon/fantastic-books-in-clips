@@ -24,7 +24,7 @@ This expert system currently recommends teen and adult fiction using the Java ba
 
 # easy way to contribute
 * Add a book! Genres can be verified by looking at the Wikipedia page of the book. 
-* Update the qualities of a book.
+* Update the characteristics of a book.
 
 # sources of knowledge
 * Wikipedia for background information on expert systems
