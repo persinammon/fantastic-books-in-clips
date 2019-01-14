@@ -52,7 +52,7 @@ and style for writing style.
 
 */
 
-(deftemplate book (slot t) (slot a) (multislot genre) (multislot story) (multislot tone) (multislot style))
+(deftemplate book (slot t) (slot a) (slot era) (slot length) (multislot genre) (multislot story) (multislot tone) (multislot style))
 
 /*
 
@@ -176,45 +176,38 @@ Is used to ask questions involving multiple characteristics.
 The deffacts construct will assert all the books in the database when Jess passes the initial-fact with the (reset) command.
 Deffacts construct is used for clarity.
 
+Book Length (pages):
+Short x <= 150
+Medium 150 < x <= 500
+Long x > 500
+
 */
 
 (deffacts library
-	(book (t The_Harry_Potter_series) (a J.K._Rowling) (genre fantasy) (story plot-driven world-building) (tone atmospheric suspenseful))
-	(book (t The_Lightning_Thief) (a Rick_Riordan) (genre fantasy adventure book_to_movie mythological) (story plot-driven) (tone funny))
-	(book (t The_Fault_in_Our_Stars) (a John_Green) (genre realistic) (story character-driven))
-	(book (t Looking_for_Alaska) (a John_Green) (genre coming-of-age mystery realistic) (story character-driven))
-	(book (t The_Hunger_Games) (a Suzanne_Collins) (genre book_to_movie science_fiction dystopia) (story plot-driven))	
-	(book (t Little_Brother) (a Cory_Doctorow) (genre science_fiction dystopia) (story plot-driven) (tone thought_provoking) (style jargon-filled))
-	(book (t Matched) (a Allyson_Condie) (genre science_fiction dystopia) (story character-driven) (tone thought_provoking) (style lyrical))
-	(book (t Candor) (a Pam_Bachorz) (genre dystopia) (style fast-paced) (tone disturbing))
-	(book (t Cinder) (a Marissa_Meyer) (story plot-driven world-building) (genre dystopia science_fiction) (tone romantic))
-	(book (t Monsters_of_Men) (a Patrick_Ness) (genre science_fiction dystopia) (story plot-driven) (tone bleak menacing thought_provoking))
-	(book (t Catch-22) (a Joseph_Heller) (story character-driven) (genre antiwar_story black_humor book_to_movie war_story satirical multiple_perspectives) (tone darkly_humorous moving sobering) (style stylistically_complex witty))
-	(book (t The_Catcher_in_the_Rye) (a J.D._Salinger) (genre coming-of-age first_person psychological) (tone darkly_humorous moving reflective))
-	(book (t Howl's_Moving_Castle) (a Diana_Wynne_Jones) (genre book_to_movie fantasy humorous) (style compelling) (tone atmospheric funny offbeat romantic) (story world-building))
-	(book (t The_Woman_Who_Died_A_Lot) (a Jasper_Fforde) (genre alternative_history fantasy first_person literary metafiction mystery) (story intricately_plotted plot-driven) (tone dramatic funny) (style witty stylistically_complex))
+	(book (t The_Harry_Potter_series) (a J.K._Rowling) (era 20) (length long) (genre fantasy) (story plot-driven world-building series) (tone atmospheric suspenseful))
+	(book (t The_Lightning_Thief) (a Rick_Riordan)  (era 21) (length medium) (genre fantasy adventure book_to_movie mythological) (story plot-driven series) (tone funny))
+	(book (t The_Fault_in_Our_Stars) (a John_Green) (era 21) (length medium) (genre realistic) (story character-driven))
+	(book (t Looking_for_Alaska) (a John_Green) (era 21) (genre coming-of-age mystery realistic) (story character-driven))
+	(book (t The_Hunger_Games) (a Suzanne_Collins) (era 21) (genre book_to_movie science_fiction dystopia) (story plot-driven series))	
+	(book (t Little_Brother) (a Cory_Doctorow) (era 21) (genre science_fiction dystopia) (story plot-driven) (tone thought_provoking) (style jargon-filled))
+	(book (t Catch-22) (a Joseph_Heller) (era 20) (story character-driven) (genre antiwar_story black_humor book_to_movie war_story satirical multiple_perspectives) (tone darkly_humorous moving sobering) (style stylistically_complex witty))
+	(book (t The_Catcher_in_the_Rye) (era 20) (a J.D._Salinger) (genre coming-of-age first_person psychological) (tone darkly_humorous moving reflective))
+	(book (t Howl's_Moving_Castle) (era 20) (a Diana_Wynne_Jones) (genre book_to_movie fantasy humorous) (style compelling) (tone atmospheric funny offbeat romantic) (story world-building))
 	(book (t Ready_Player_One) (a Ernest_Cline) (genre coming-of-age first_person science_fiction) (story action-packed intricately_plotted) (tone funny offbeat nostalgic) (style jargon-filled))
-	(book (t Incarceron) (a Catherine_Fisher) (genre science_fiction) (story world-building action-packed intricately_plotted) (tone bleak suspenseful) (style compelling lyrical))
 	(book (t The_Oracle_Betrayed) (a Catherine_Fisher) (genre fantasy) (story plot-driven world-building) (tone suspenseful) (style compelling))
-	(book (t Starcrossed) (a Elizabeth_Bunce) (genre fantasy) (story world-building) (tone sarcastic suspenseful) (style stylistically_complex))
 	(book (t The_Da_Vinci_Code) (a Dan_Brown) (genre book_to_movie suspense) (story plot-driven intricately-plotted) (tone atmospheric suspenseful) (style descriptive jargon-filled))		
-	(book (t The_Rook) (a Daniel_O'Malley) (genre diary suspense urban_fantasy) (story action-packed) (tone offbeat) (style gritty))
 	(book (t Pride_and_Prejudice) (a Jane_Austen) (genre book_to_movie domestic_fiction love_story) (story character-driven) (tone atmospheric romantic) (style engaging))
 	(book (t The_Great_Gatsby) (a F.Scott_Fitzgerald) (genre book_to_movie) (story character-driven) (tone atmospheric romantic) (style lyrical stylistically_complex))
 	(book (t The_Time_Traveler's_Wife) (a Audrey_Niffenegger) (genre literary multiple_perspectives domestic first_person) (story character-driven intricately-plotted) (tone romantic thought-provoking) (style witty lyrical))
-	(book (t Twilight) (a Stephenie_Meyer) (genre book_to_movie first_person paranormal_romance) (story character-driven) (tone suspenseful))
-	(book (t The_Hobbit) (a J.R.R._Tolkien) (genre book_to_movie epic fantasy) (story world-building plot-driven) (tone upbeat) (style stylistically_complex))
-	(book (t Good_Omens) (a Neil_Gaiman) (genre humorous satirical) (tone darkly_humorous upbeat) (style witty))
+	(book (t The_Hobbit) (a J.R.R._Tolkien) (genre book_to_movie epic fantasy) (story world-building plot-driven series) (tone upbeat) (style stylistically_complex))
 	(book (t Interworld) (a Neil_Gaiman) (genre fantasy science_fiction) (story plot-driven) (tone sarcastic) (style compelling descriptive))
-	(book (t Nation) (a Terry_Pratchett) (genre adventure fantasy) (story character-driven) (tone funny thought-provoking) (style engaging))
-	(book (t The_Night_Circus) (a Erin_Morgenstern) (genre fantasy) (tone atmospheric romantic) (style detail_rich))
 	(book (t The_Godfather) (a Mario_Puzo) (genre book_to_movie family_saga) (story character-driven) (tone dramatic haunting violent) (style compelling gritty))
-	(book (t Ship_Breaker) (a Paolo_Bacigalupi) (genre science_fiction) (story action-packed world-building) (tone bleak) (style compelling))
-	(book (t The_Casual_Vacancy) (a J.K._Rowling) (genre black_humor satirical) (story character-driven) (tone bleak darkly_humorous))
-	(book (t Nancy_Drew_mysteries) (a Carolyn_Keene) (genre mystery) (story plot-driven) (tone suspenseful))
-	(book (t Hardy_Boys_mysteries) (a Frankline_W._Dixon) (genre mystery) (story plot-driven))
-	(book (t The_House_of_the_Scorpion) (a Nancy_Farmer) (genre science_fiction dystopia) (story world-building) (tone suspenseful))
+	(book (t The_House_of_the_Scorpion) (a Nancy_Farmer) (genre science_fiction dystopia) (story world-building series) (tone suspenseful))
 	(book (t The_Shadow_Speaker) (a Nnedi_Okorafor-Mbachu) (genre science_fiction fantasy adventure bildungsroman historical_drama) (story world-building African plot-driven) (tone serious))
+	(book (t The_Thief_Series) (a Megan_Whalen_Turner) (era 20) (length medium) (genre young_adult fantasy adventure historical) (story deceit series political) (tone humorous snarky) (style witty))
+	(book (t The_Song_of_The_Lionness_Quartet) (a Tamora_Pierce) (era 20) (length medium) (genre young_adult fantasy) (story magic deceit political series) (tone serious fantastical))
+	(book (t Circle_of_Magic) (a Tamora_Pierce) (era 20) (length medium) (genre young_adult fantasy bildungsroman) (story multiple_main_characters political magic deceit) (tone serious))
+
 )
 
 
@@ -238,9 +231,13 @@ writes yes/no instead of a characteristic (because none of the books have yes/no
 
 (defrule startup
 	=>
+	(printout t crlf)
 	(printout t "Welcome to the Book Guru!" crlf)
-	(printout t "I will recommend your perfect (fiction) book." crlf)
+	(printout t "I will recommend your next perfect fiction read.")
+	(printout t crlf)
+	(printout t "For most questions, y or n is sufficient." crlf)
 	(printout t "You can skip the first question by typing in \"skip\"!" crlf)
+	(printout t "If the last fiction you have enjoyed is in the library, I will try to recommend a similar book." crlf)
 	(printout t crlf)
 	(printout t "What was the last fiction you enjoyed?" crlf)
 	(bind ?lastbook (readthis (readline)))
@@ -286,6 +283,8 @@ Combined, these rules are how the enormous list of books is eventually whittled 
 	Otherwise, all the books could be retracted, giving an inaccurate recommendation. */
 	(exists (or 
 	(book (a ?char))
+	(book (era ?char))
+	(book (length ?char))
 	(book (genre $? ?char $?))
 	(book (story $? char $?))
 	(book (tone $? ?char $?))
@@ -307,6 +306,8 @@ Combined, these rules are how the enormous list of books is eventually whittled 
 	*/
 
 	?book <- (or (book (a ?char))
+		(book (era ?char))
+		(book (length ?char))
 		(book (genre $? ?char $?))
 		(book (story $? char $?))
 		(book (tone $? ?char $?))
@@ -437,10 +438,38 @@ the main question asking rules to start firing by asserting (question).
 
 /* THE MAIN QUESTION ASKING RULES */
 
+
+/*
+(defrule ask-question-about-length
+	(question)
+	=>
+	(printthis (str-cat "Do you want to read a short, medium, or long length novel? s, m, l, or n (none) is sufficient."))
+	(bind ?ans (read)); takes in user response
+	
+	(if (eq (str-compare (sub-string 1 1 ?ans) "s") 0) then (assert-string "(must short)"))
+	(if (eq (str-compare (sub-string 1 1 ?ans) "m") 0) then (assert-string "(must medium)"))
+	(if (eq (str-compare (sub-string 1 1 ?ans) "l") 0) then (assert-string "(must long)"))
+)
+
+
+(defrule ask-question-about-era
+	(question)
+	=>
+	(printthis (str-cat "From which century do you want your novel to be? Warning- currently only novels from the 20th and 21st centuries are in the library, so if you want a recommendation I (Book Guru) recommend picking one of those!"))
+	(bind ?ans (read)); takes in user response
+	
+	(if (eq (str-compare (sub-string 1 2 ?ans) "21") 0) then (assert-string (str-cat "(must 21)")) )
+	(if (eq (str-compare (sub-string 1 2 ?ans) "20") 0) then (assert-string (str-cat "(must 20)")) )
+	(if (eq (str-compare (sub-string 1 2 ?ans) "19") 0) then (assert-string (str-cat "(must 19)")) )
+	(if (eq (str-compare (sub-string 1 2 ?ans) "18") 0) then (assert-string (str-cat "(must 18)")) )
+	(if (eq (str-compare (sub-string 1 2 ?ans) "17") 0) then (assert-string (str-cat "(must 17)")) )
+)
+*/
+
 (defrule ask-question-about-genre
 	(question);the requirement of the (question) assertion is to make sure that 
 		  ; recognize-book would be able to ask questions before this rule
-	
+	(dont-fire)
 	;takes two books which have at least one characteristic in the the genre field
 	?book1 <- (book (genre $?genre&:(> (length$ ?genre) 0)))
 	?book2 <- (book (genre $?genre2&:(> (length$ ?genre2) 0)))
@@ -464,6 +493,7 @@ the main question asking rules to start firing by asserting (question).
 
 (defrule ask-question-about-tone
 	(question)
+	(dont-fire)
 	?book1 <- (book (tone $?tone&:(> (length$ ?tone) 0)))
 	?book2 <- (book (tone $?tone2&:(> (length$ ?tone2) 0)))
 	
@@ -478,6 +508,7 @@ the main question asking rules to start firing by asserting (question).
 
 (defrule ask-question-about-story
 	(question)
+	(dont-fire)
 	?book1 <- (book (story $?story&:(> (length$ ?story) 0)))
 	?book2 <- (book (story $?story2&:(> (length$ ?story2) 0)))
 	
@@ -492,6 +523,7 @@ the main question asking rules to start firing by asserting (question).
 
 (defrule ask-question-about-style
 	(question)
+	(dont-fire)
 	?book1 <- (book (style $?style&:(> (length$ ?style) 0)))
 	?book2 <- (book (style $?style2&:(> (length$ ?style2) 0)))
 	
