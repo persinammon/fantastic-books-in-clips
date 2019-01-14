@@ -5,7 +5,7 @@
 Author: Monica Kumaran
 Project: Fantastic Books and Where to Find Them 
 
-This expert system recommends fiction books.
+This expert system recommends fiction.
 
 It starts out with an enormous list of books, and it will ask the user questions
 until it has whittled the huge list down to one book to recommend.
